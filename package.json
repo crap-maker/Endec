@@ -1,0 +1,22 @@
+{
+  "name": "endec",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "test:dist": "pnpm --filter @endec/app test:dist && pnpm --filter @endec/adapter-telegram test:dist",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0",
+    "zod": "^3.24.1",
+    "@types/node": "^22.10.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
+  }
+}

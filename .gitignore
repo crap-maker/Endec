@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build / test output
+dist/
+coverage/
+*.tsbuildinfo
+
+# Worktrees / local runtime state
+.worktrees/
+data/
+.endec/
+packages/cli/.endec/
+
+# Local-only project docs
+*.md
+TODO.md
+docs/
+PRODUCT.md
+
+# Environment / local config
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+
+# Logs
+*.log
+
+# Databases / local state files
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/

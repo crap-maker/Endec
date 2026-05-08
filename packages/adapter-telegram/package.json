@@ -1,0 +1,35 @@
+{
+  "name": "@endec/adapter-telegram",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "endec-telegram": "dist/bin.js"
+  },
+  "scripts": {
+    "test": "node ../../scripts/run-vitest.mjs",
+    "test:dist": "node ../../scripts/run-vitest.mjs --config vitest.dist.config.mts",
+    "build": "pnpm -r --filter @endec/adapter-telegram^... build && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@endec/app": "workspace:*",
+    "@endec/domain": "workspace:*",
+    "@endec/im-adapter": "workspace:*",
+    "@endec/tasks": "workspace:*",
+    "better-sqlite3": "^12.4.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13"
+  },
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  }
+}

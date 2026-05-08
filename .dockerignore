@@ -1,0 +1,11 @@
+.git
+.worktrees
+node_modules
+dist
+packages/*/dist
+data
+.endec
+packages/cli/.endec
+.env
+coverage
+.vitest

@@ -1,0 +1,21 @@
+services:
+  telegram:
+    image: endec-telegram:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      ENDEC_DATA_DIR: /data
+    volumes:
+      - ./data:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    # If your model service only listens on 127.0.0.1 on the Linux host,
+    # uncomment the next line so the container can reach that host-loopback service.
+    # network_mode: host
